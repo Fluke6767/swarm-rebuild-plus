@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0d18">
+  <meta name="description" content="Swarm Rebuild Plus — an offline-friendly visual rebuild playground for Android browsers.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>Swarm Rebuild Plus</title>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Swarm Rebuild Plus home">
+        <span class="brand-mark">✳</span>
+        <span>SWARM <b>REBUILD</b></span><small>PLUS</small>
+      </a>
+      <div class="top-actions">
+        <button id="installBtn" class="ghost hidden">Install app</button>
+        <button id="helpBtn" class="icon-btn" aria-label="Help">?</button>
+      </div>
+    </header>
+
+    <section class="intro" id="intro">
+      <div class="eyebrow"><span class="pulse"></span> ANDROID EDITION · LOCAL MODE</div>
+      <h1>Watch a page<br><em>come together.</em></h1>
+      <p>Import a screenshot or launch the sample scene. Swarm agents rebuild the visual layer right on your device.</p>
+      <div class="main-actions">
+        <button id="sampleBtn" class="primary">▶ Start sample</button>
+        <label class="secondary upload-label">＋ Import screenshot<input id="imageInput" type="file" accept="image/*"></label>
+      </div>
+      <div class="note"><span>◈</span> Files stay on this device. No upload, tracking or account.</div>
+    </section>
+
+    <section class="workspace" id="workspace" hidden>
+      <div class="stage-wrap">
+        <canvas id="stage" aria-label="Swarm rebuild animation"></canvas>
+        <div class="stage-hud">
+          <span class="live-dot"></span><span id="status">READY</span>
+          <span class="hud-spacer"></span><span id="percent">0%</span>
+        </div>
+        <div class="stage-empty" id="emptyHint">Your scene will appear here</div>
+      </div>
+      <div class="controls">
+        <div class="control-row">
+          <button id="playBtn" class="primary compact">▶ Play</button>
+          <button id="replayBtn" class="control">↻ Replay</button>
+          <button id="tourBtn" class="control">Tour</button>
+          <button id="soundBtn" class="control" aria-label="Toggle sound">♫</button>
+          <button id="resetBtn" class="control">Reset</button>
+        </div>
+        <div class="settings">
+          <label>Speed <select id="speed"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2" selected>2×</option><option value="3">3×</option></select></label>
+          <label>Agents <select id="agents"><option>4</option><option selected>8</option><option>12</option><option>16</option></select></label>
+          <label class="toggle"><input id="trail" type="checkbox" checked> Cursor trails</label>
+        </div>
+        <div class="progress"><i id="progressBar"></i></div>
+      </div>
+    </section>
+
+    <section class="feature-grid" id="features">
+      <article><span>01</span><h2>Swarm motion</h2><p>Colorful agents move across the scene as it rebuilds.</p></article>
+      <article><span>02</span><h2>Touch controls</h2><p>Replay, speed, agent count and tour controls designed for phones.</p></article>
+      <article><span>03</span><h2>Private by design</h2><p>Images are processed locally in your browser and never uploaded.</p></article>
+    </section>
+    <footer>SWARM REBUILD PLUS <span>·</span> ANDROID PWA PROTOTYPE 0.2.0</footer>
+  </main>
+
+  <dialog id="helpDialog">
+    <div class="dialog-head"><b>How to use</b><button id="closeHelp" class="icon-btn">×</button></div>
+    <ol>
+      <li>Tap <b>Start sample</b> or import a screenshot from your device.</li>
+      <li>Press <b>Play</b> to watch the swarm reveal the scene.</li>
+      <li>Change speed and agent count while it runs.</li>
+      <li>Use <b>Tour</b> to move through the scene, or Replay to start again.</li>
+    </ol>
+    <p class="fineprint">This PWA animates content you provide or its built-in sample. Android browsers do not let an ordinary website read and overlay other tabs. Direct current-tab integration requires browser extension support or a separately installed Android app with appropriate permissions.</p>
+  </dialog>
+  <script src="app.js" defer></script>
+</body>
+</html>

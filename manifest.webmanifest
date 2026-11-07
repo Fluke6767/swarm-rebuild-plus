@@ -1,0 +1,20 @@
+{
+  "id": "./",
+  "name": "Swarm Rebuild Plus",
+  "short_name": "Swarm Plus",
+  "description": "A local visual rebuild playground with swarm cursor animation.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0b0d18",
+  "theme_color": "#0b0d18",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
